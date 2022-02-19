@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
+            prefWidth="700.0" style="-fx-background-color: #4b0082#4b0082;" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.RandomStudentVsStudentController">
+    <children>
+        <AnchorPane layoutX="1.0" layoutY="90.0" prefHeight="619.0" prefWidth="700.0"
+                    style="-fx-background-color: #faebd7#faebd7;">
+            <children>
+                <Button fx:id="startRandom" layoutX="25.0" layoutY="434.0" mnemonicParsing="false" prefHeight="50.0"
+                        prefWidth="300.0" text="Start">
+                    <font>
+                        <Font size="31.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="backButton" layoutX="202.0" layoutY="518.0" mnemonicParsing="false" prefHeight="50.0"
+                        prefWidth="300.0" text="Return">
+                    <font>
+                        <Font size="31.0"/>
+                    </font>
+                </Button>
+
+
+                <Label layoutX="52.0" layoutY="15.0" prefHeight="50.0" prefWidth="300.0" text="Asks"
+                       textAlignment="RIGHT" textFill="#724f4f" wrapText="true">
+                    <font>
+                        <Font name="New Peninim MT" size="64.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="386.0" layoutY="15.0" prefHeight="50.0" prefWidth="300.0" text="Answers"
+                       textAlignment="RIGHT" textFill="#724f4f" wrapText="true">
+                    <font>
+                        <Font name="New Peninim MT" size="64.0"/>
+                    </font>
+                </Label>
+                <Separator layoutX="347.0" layoutY="15.0" orientation="VERTICAL" prefHeight="250.0"
+                           style="-fx-background-color: #000080#000080;"/>
+                <Label fx:id="studentNameQuestion" layoutX="14.0" layoutY="122.0" prefHeight="50.0" prefWidth="300.0"
+                       textAlignment="RIGHT" textFill="#724f4f" wrapText="true">
+                    <font>
+                        <Font name="New Peninim MT" size="32.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="studentNameAnswer" layoutX="386.0" layoutY="122.0" prefHeight="50.0" prefWidth="300.0"
+                       textAlignment="RIGHT" textFill="#724f4f" wrapText="true">
+                    <font>
+                        <Font name="New Peninim MT" size="32.0"/>
+                    </font>
+                </Label>
+
+                <Label fx:id="errorTEXT" alignment="CENTER" layoutX="71.0" layoutY="386.0" prefHeight="5.0"
+                       prefWidth="508.0" textAlignment="RIGHT" textFill="#da3e3e" wrapText="true">
+                    <font>
+                        <Font name="New Peninim MT" size="30.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Label layoutX="100.0" prefHeight="85.0" prefWidth="500.0" text="Random students" textAlignment="CENTER"
+               textFill="#da3e3e" wrapText="true">
+            <font>
+                <Font name="New Peninim MT" size="64.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
