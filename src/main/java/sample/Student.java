@@ -7,8 +7,7 @@ public class Student {
     private String name;
     private String lastname;
     private String question;
-    private String answer;
-    private String bonusBall;
+
     private String team;
 
     public Student() {
@@ -25,9 +24,9 @@ public class Student {
         if (!Objects.equals(name, student.name)) return false;
         if (!Objects.equals(lastname, student.lastname)) return false;
         if (!Objects.equals(question, student.question)) return false;
-        if (!Objects.equals(answer, student.answer)) return false;
-        if (!Objects.equals(team, student.team)) return false;
-        return Objects.equals(bonusBall, student.bonusBall);
+
+
+        return Objects.equals(team, student.team);
     }
 
     @Override
@@ -36,8 +35,7 @@ public class Student {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
         result = 31 * result + (question != null ? question.hashCode() : 0);
-        result = 31 * result + (answer != null ? answer.hashCode() : 0);
-        result = 31 * result + (bonusBall != null ? bonusBall.hashCode() : 0);
+
         return result;
     }
 
@@ -47,8 +45,7 @@ public class Student {
         this.lastname = lastname;
         this.team = team;
         this.question = question;
-        this.answer = answer;
-        this.bonusBall = bonusBall;
+
     }
 
     public int getId() {
@@ -79,21 +76,9 @@ public class Student {
         this.question = question;
     }
 
-    public String getAnswer() {
-        return answer;
-    }
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
 
-    public String getBonusBall() {
-        return bonusBall;
-    }
 
-    public void setBonusBall(String bonusBall) {
-        this.bonusBall = bonusBall;
-    }
 
     public String getTeam() {
         return team;
