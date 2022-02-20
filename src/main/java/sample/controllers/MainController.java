@@ -10,17 +10,12 @@ import javafx.stage.Stage;
 import sample.DataBase.DataBaseHandler;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+
 
 public class MainController {
     Stage stage = new Stage();
 
-    @FXML
-    private ResourceBundle resources;
 
-    @FXML
-    private URL location;
 
     @FXML
     private Button addStudentButton;

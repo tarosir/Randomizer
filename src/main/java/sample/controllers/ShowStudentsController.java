@@ -12,18 +12,10 @@ import sample.DataBase.DataBaseHandler;
 import sample.Main;
 import sample.Student;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class ShowStudentsController {
     Main main = new Main();
     Stage stage = new Stage();
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     @FXML
     private Button backButton;

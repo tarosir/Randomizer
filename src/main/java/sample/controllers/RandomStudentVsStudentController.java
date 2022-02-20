@@ -2,28 +2,23 @@ package sample.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
+
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import sample.DataBase.DataBaseHandler;
 import sample.Main;
 import sample.Student;
 
-import java.net.URL;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
+
 import java.util.stream.Collectors;
 
 public class RandomStudentVsStudentController {
     Main main = new Main();
     Stage stage = new Stage();
 
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     @FXML
     private Button backButton;
@@ -87,7 +82,7 @@ public class RandomStudentVsStudentController {
         } else {
             studentQuestion = listStudentQuestion.get((int) (Math.random() * listStudentQuestion.size()));
             studentQuestion.setQuestion("done");
-            studentNameQuestion.setText(studentQuestion.getLastname() + " " + studentQuestion.getName());
+            studentNameQuestion.setText(studentQuestion.getLastname() + " " + studentQuestion.getName()+ " " + studentAnswer.getTeam());
             updateLists();
             randomSecond();
         }
@@ -100,7 +95,7 @@ public class RandomStudentVsStudentController {
 
         if ((!studentAnswer.getTeam().equals(studentQuestion.getTeam()))) {
             studentAnswer.setQuestion("done");
-            studentNameAnswer.setText(studentAnswer.getLastname() + " " + studentAnswer.getName());
+            studentNameAnswer.setText(studentAnswer.getLastname() + " " + studentAnswer.getName()+ " " + studentAnswer.getTeam());
             updateLists();
         } else randomSecond();
     }
@@ -109,6 +104,7 @@ public class RandomStudentVsStudentController {
         int i = listStudent.size() / 2;
         while (i != 0) {
             randomize();
+            i--;
         }
     }
 
