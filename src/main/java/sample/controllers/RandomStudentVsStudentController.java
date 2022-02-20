@@ -31,17 +31,6 @@ public class RandomStudentVsStudentController {
     @FXML
     private Label errorTEXT;
 
-    @FXML
-    private CheckBox bonusBallCheckAnswer;
-
-    @FXML
-    private CheckBox goodAnswerCheck;
-
-    @FXML
-    private CheckBox goodQuestionCheck;
-
-    @FXML
-    private Button nextRandom;
 
     @FXML
     private Button startRandom;
@@ -54,7 +43,7 @@ public class RandomStudentVsStudentController {
 
     List<Student> listStudent = new ArrayList<>();
     List<Student> listStudentQuestion = new ArrayList<>();
-    List<Student> listStudentAnswer = new ArrayList<>();
+
     Student studentQuestion;
     Student studentAnswer;
 
@@ -80,8 +69,6 @@ public class RandomStudentVsStudentController {
             randomize();
 
 
-
-
         });
 
 
@@ -93,10 +80,9 @@ public class RandomStudentVsStudentController {
     }
 
 
-
     private void randomize() {
         updateLists();
-        if (listStudentQuestion.size()<2) {
+        if (listStudentQuestion.size() < 2) {
             errorTEXT.setText("There is no more  pairs left.");
         } else {
             studentQuestion = listStudentQuestion.get((int) (Math.random() * listStudentQuestion.size()));
@@ -112,7 +98,7 @@ public class RandomStudentVsStudentController {
         studentAnswer = listStudentQuestion.get((int) (Math.random() * listStudentQuestion.size()));
 
 
-        if ( (!studentAnswer.getTeam().equals(studentQuestion.getTeam()))) {
+        if ((!studentAnswer.getTeam().equals(studentQuestion.getTeam()))) {
             studentAnswer.setQuestion("done");
             studentNameAnswer.setText(studentAnswer.getLastname() + " " + studentAnswer.getName());
             updateLists();
@@ -120,13 +106,11 @@ public class RandomStudentVsStudentController {
     }
 
     private void randomAll() {
-        int i=listStudent.size()/2;
-        while ( i !=0){
+        int i = listStudent.size() / 2;
+        while (i != 0) {
             randomize();
         }
     }
-
-
 
 
 }

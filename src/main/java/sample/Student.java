@@ -39,7 +39,7 @@ public class Student {
         return result;
     }
 
-    public Student(int id, String name, String lastname, String team, String question, String answer, String bonusBall) {
+    public Student(int id, String name, String lastname, String team, String question) {
         this.id = id;
         this.name = name;
         this.lastname = lastname;

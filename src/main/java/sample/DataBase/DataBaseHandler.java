@@ -28,16 +28,15 @@ public class DataBaseHandler extends Config {
 
     public static void addStudentFromDB(String lastname, String name, String team) {
         String insert = "INSERT INTO " + Constant.STUDENT_TABLE + " (" + Constant.LASTNAME + "," + Constant.NAME + "," + Constant.TEAM + ","
-                + Constant.QUESTION + "," + Constant.ANSWER + "," + Constant.BONUS_BALL + ")" +
-                " VALUES(?,?,?,?,?,?)";
+                + Constant.QUESTION +  ")" +
+                " VALUES(?,?,?,?)";
         try {
             PreparedStatement preparedStatement = getConnection().prepareStatement(insert);
             preparedStatement.setString(1, lastname);
             preparedStatement.setString(2, name);
             preparedStatement.setString(3, team);
             preparedStatement.setString(4, "x");
-            preparedStatement.setString(5, "x");
-            preparedStatement.setString(6, "x");
+
             preparedStatement.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -46,7 +45,7 @@ public class DataBaseHandler extends Config {
 
     public static void setQuestionAndAnswerAndBalls(Student student) {
         String setQuestionAndAnswerAndBallsSQL = "UPDATE " + Constant.STUDENT_TABLE + " SET question = '" + student.getQuestion() + "' , "
-                + "answer= '" + student.getAnswer() + "' , " + " bonusBall= '" + student.getBonusBall() + "' WHERE id= " + student.getId();
+               + "' WHERE id= " + student.getId();
         try {
             PreparedStatement preparedStatement = getConnection().prepareStatement(setQuestionAndAnswerAndBallsSQL);
             preparedStatement.executeUpdate();
@@ -77,9 +76,8 @@ public class DataBaseHandler extends Config {
                         resultSet.getString(Constant.NAME),
                         resultSet.getString(Constant.LASTNAME),
                         resultSet.getString(Constant.TEAM),
-                        resultSet.getString(Constant.QUESTION),
-                        resultSet.getString(Constant.ANSWER),
-                        resultSet.getString(Constant.BONUS_BALL)
+                        resultSet.getString(Constant.QUESTION)
+
 
                 ));
             }
@@ -91,7 +89,7 @@ public class DataBaseHandler extends Config {
 
 
     public static void clearMarks() {
-        String clearMarksSQL = "UPDATE student SET question = 'x' , answer= 'x' ,  bonusBall= 'x'";
+        String clearMarksSQL = "UPDATE student SET question = 'x' ";
 
         try {
             PreparedStatement preparedStatement = getConnection().prepareStatement(clearMarksSQL);
